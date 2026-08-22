@@ -163,7 +163,67 @@ def check_url():
             "description": "Shortened links can hide the real destination website."
         })
 
-    # 4. SUSPICIOUS DOMAIN WORDS
+    # 4. BRAND IMPERSONATION CHECK
+    # Scammers often put a real brand name in the domain, followed by
+    # extra characters, to make it look official (e.g. usps.com-xyz.vip
+    # instead of the real usps.com).
+    known_brands = [
+        "usps", "fedex", "dhl", "ups",
+        "paypal", "amazon", "apple", "microsoft",
+        "google", "facebook", "instagram", "whatsapp",
+        "netflix", "bank", "hbl", "ubl", "meezan",
+        "jazzcash", "easypaisa", "sbp"
+    ]
+
+    matched_brand = None
+
+    for brand in known_brands:
+        if brand in domain:
+            # Allow the real domain and its normal subdomains,
+            # e.g. usps.com or www.usps.com
+            official_patterns = [
+                brand + ".com",
+                brand + ".org",
+                brand + ".net"
+            ]
+
+            is_official = any(
+                domain == pattern or domain.endswith("." + pattern)
+                for pattern in official_patterns
+            )
+
+            if not is_official:
+                matched_brand = brand
+                break
+
+    if matched_brand:
+        score += 35
+
+        signals.append({
+            "type": "danger",
+            "icon": "🎭",
+            "title": "Possible brand impersonation",
+            "description": f"The domain contains '{matched_brand}' but does not match {matched_brand}'s official website. This is a common scam trick."
+        })
+
+    # 5. SUSPICIOUS TLD CHECK
+    suspicious_tlds = [
+        ".vip", ".top", ".xyz", ".click", ".work",
+        ".support", ".loan", ".gq", ".tk", ".ml",
+        ".cf", ".ga", ".icu", ".rest", ".zip"
+    ]
+
+    if any(domain.endswith(tld) for tld in suspicious_tlds):
+        score += 15
+
+        signals.append({
+            "type": "warning",
+            "icon": "🌐",
+            "title": "Unusual domain ending",
+            "description": "This domain uses an ending that's rarely used by legitimate companies and is common in scam links."
+        })
+
+    # 6. SUSPICIOUS DOMAIN WORDS
     suspicious_words = [
         "login",
         "verify",

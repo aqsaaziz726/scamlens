@@ -1,0 +1,13 @@
+# Local database - each environment should have its own
+scamlens.db
+
+# Environment variables / secrets
+.env
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+Thumbs.db

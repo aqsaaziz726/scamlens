@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ScamLens | Don't Trust It. Check It.</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="logo">
+            <span>🛡️</span> ScamLens
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <button class="nav-btn">Check a Message</button>
+    </header>
+
+
+    <!-- Hero Section -->
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <div class="badge">
+                    🛡️ AI-Powered Scam Detection
+                </div>
+
+                <h1>
+                    Don't Trust It.
+                    <span>Check It.</span>
+                </h1>
+
+                <p>
+                    Suspicious message, link, or screenshot?
+                    ScamLens helps you identify potential scams
+                    and understand the warning signs before you click.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#analyzer" class="primary-btn">
+                        🔍 Check a Message
+                    </a>
+
+                    <a href="#how-it-works" class="secondary-btn">
+                        How It Works
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="hero-card">
+
+                <div class="card-top">
+                    <span>Scam Analysis</span>
+                    <span class="status-dot"></span>
+                </div>
+
+                <div class="risk-circle">
+                    <strong>91</strong>
+                    <small>/100</small>
+                </div>
+
+                <h3>High Risk</h3>
+
+                <p>
+                    Multiple suspicious signals detected.
+                </p>
+
+                <div class="warning-item">
+                    <span>⚠️</span>
+                    <div>
+                        <strong>Urgency detected</strong>
+                        <small>“Act within 10 minutes”</small>
+                    </div>
+                </div>
+
+                <div class="warning-item">
+                    <span>🔗</span>
+                    <div>
+                        <strong>Suspicious link</strong>
+                        <small>Unusual shortened URL</small>
+                    </div>
+                </div>
+
+                <div class="warning-item">
+                    <span>💳</span>
+                    <div>
+                        <strong>Financial bait</strong>
+                        <small>Prize/payment request</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Analyzer Section -->
+        <section class="analyzer-section" id="analyzer">
+
+            <div class="section-heading">
+                <span class="mini-label">SCAM CHECKER</span>
+
+                <h2>
+                    Is this message
+                    <span>safe?</span>
+                </h2>
+
+                <p>
+                    Paste a suspicious message or upload a screenshot
+                    to analyze it.
+                </p>
+            </div>
+
+
+            <div class="analyzer-box">
+
+                <div class="input-area">
+
+                    <label for="message">
+                        Paste suspicious message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        placeholder="Paste the suspicious message here..."
+                    ></textarea>
+
+                    <div class="input-footer">
+
+                        <span>
+                            🔒 Your message will be analyzed securely.
+                        </span>
+
+                        <span id="character-count">
+                            0 characters
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="upload-area">
+
+                    <div class="upload-icon">
+                        📸
+                    </div>
+
+                    <h3>Upload a screenshot</h3>
+
+                    <p>
+                        PNG, JPG or JPEG
+                    </p>
+
+                    <input
+                        type="file"
+                        id="screenshot"
+                        accept="image/png, image/jpeg, image/jpg"
+                    >
+
+                    <label for="screenshot" class="upload-btn">
+                        Choose Screenshot
+                    </label>
+
+                </div>
+
+
+                <button class="analyze-btn" id="analyze-btn">
+                    🔍 Analyze Message
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- How It Works -->
+        <section class="how-it-works" id="how-it-works">
+
+            <div class="section-heading">
+
+                <span class="mini-label">HOW IT WORKS</span>
+
+                <h2>
+                    Stay one step ahead
+                </h2>
+
+                <p>
+                    ScamLens analyzes suspicious content and explains
+                    exactly why something may be dangerous.
+                </p>
+
+            </div>
+
+
+            <div class="steps">
+
+                <div class="step-card">
+
+                    <div class="step-number">01</div>
+
+                    <div class="step-icon">📩</div>
+
+                    <h3>Upload</h3>
+
+                    <p>
+                        Paste a suspicious message or upload
+                        a screenshot.
+                    </p>
+
+                </div>
+
+
+                <div class="step-card">
+
+                    <div class="step-number">02</div>
+
+                    <div class="step-icon">🔎</div>
+
+                    <h3>Analyze</h3>
+
+                    <p>
+                        ScamLens checks the content for suspicious
+                        patterns and links.
+                    </p>
+
+                </div>
+
+
+                <div class="step-card">
+
+                    <div class="step-number">03</div>
+
+                    <div class="step-icon">⚠️</div>
+
+                    <h3>Understand</h3>
+
+                    <p>
+                        See the risk score and the warning signs
+                        detected in the message.
+                    </p>
+
+                </div>
+
+
+                <div class="step-card">
+
+                    <div class="step-number">04</div>
+
+                    <div class="step-icon">🛡️</div>
+
+                    <h3>Stay Safe</h3>
+
+                    <p>
+                        Understand what to avoid before clicking
+                        or sharing your information.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Scam Types -->
+        <section class="scam-types">
+
+            <div class="section-heading">
+
+                <span class="mini-label">WHAT WE DETECT</span>
+
+                <h2>
+                    Common scam <span>patterns</span>
+                </h2>
+
+            </div>
+
+
+            <div class="scam-grid">
+
+                <div class="scam-card">
+                    <div>🎣</div>
+                    <h3>Phishing</h3>
+                    <p>
+                        Fake messages designed to steal your
+                        login information.
+                    </p>
+                </div>
+
+                <div class="scam-card">
+                    <div>💰</div>
+                    <h3>Prize Scams</h3>
+                    <p>
+                        Fake rewards and lottery messages
+                        asking for personal information.
+                    </p>
+                </div>
+
+                <div class="scam-card">
+                    <div>💼</div>
+                    <h3>Job Scams</h3>
+                    <p>
+                        Fake job offers requesting fees or
+                        sensitive information.
+                    </p>
+                </div>
+
+                <div class="scam-card">
+                    <div>📦</div>
+                    <h3>Delivery Scams</h3>
+                    <p>
+                        Fake parcel and courier messages
+                        containing suspicious payment links.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- About -->
+        <section class="about" id="about">
+
+            <div class="about-content">
+
+                <span class="mini-label">ABOUT SCAMLENS</span>
+
+                <h2>
+                    Think before
+                    <span>you click.</span>
+                </h2>
+
+                <p>
+                    ScamLens is designed to help people recognize
+                    suspicious messages, understand common scam
+                    techniques, and make safer decisions online.
+                </p>
+
+                <div class="about-stats">
+
+                    <div>
+                        <strong id="stat-total-scans">–</strong>
+                        <span>Messages Checked</span>
+                    </div>
+
+                    <div>
+                        <strong id="stat-high-risk">–</strong>
+                        <span>High Risk Caught</span>
+                    </div>
+
+                    <div>
+                        <strong>24/7</strong>
+                        <span>Always Available</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-logo">
+            🛡️ ScamLens
+        </div>
+
+        <p>
+            Don't trust it. Check it.
+        </p>
+
+        <p class="copyright">
+            © 2026 ScamLens. Built for safer digital experiences.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -197,7 +197,7 @@ def check_url():
                 break
 
     if matched_brand:
-        score += 35
+        score += 50
 
         signals.append({
             "type": "danger",

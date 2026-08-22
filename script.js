@@ -645,8 +645,10 @@ document.addEventListener("DOMContentLoaded", () => {
             ...textResult.signals
         ];
 
-        let highestScore =
-            textResult.score;
+        // Track the worst (highest) URL score separately from the
+        // text score, so we can combine them below instead of just
+        // picking whichever single score is bigger.
+        let highestUrlScore = 0;
 
         urlResults.forEach((urlResult, index) => {
 
@@ -665,11 +667,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
             });
 
-            if (urlResult.score > highestScore) {
-                highestScore = urlResult.score;
+            if (urlResult.score > highestUrlScore) {
+                highestUrlScore = urlResult.score;
             }
 
         });
+
+        // Combine text-based warning signs (urgency, prize bait, etc.)
+        // with link-based warning signs (brand impersonation, bad TLD,
+        // etc.) instead of only keeping the single worst score. A
+        // message that is both urgent AND links to an impersonated
+        // brand is more dangerous than either signal alone.
+        let highestScore =
+            textResult.score + highestUrlScore;
 
         highestScore = Math.min(highestScore, 100);
 
